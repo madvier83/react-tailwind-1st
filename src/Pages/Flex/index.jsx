@@ -1,7 +1,10 @@
 const Flex = () => {
   return (
     <>
-      <h1>Flex</h1>
+      {/* Wrapper */}
+      <div className="w-full h-full min-h-screen bg-slate-900 text-slate-400">
+        <h1>Flexbox</h1>
+      </div>
     </>
   );
 };
