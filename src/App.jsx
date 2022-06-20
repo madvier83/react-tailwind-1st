@@ -1,7 +1,7 @@
 import "./App.css";
 import { Navbar } from "./Components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Flex } from "./Pages";
+import { Home, Flex, Grid } from "./Pages";
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/flexbox" element={<Flex />} />
+          <Route path="/flex" element={<Flex />} />
+          <Route path="/grid" element={<Grid />} />
         </Routes>
       </Router>
     </>

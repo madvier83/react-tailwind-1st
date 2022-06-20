@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .nav-active {
+    @apply text-sky-300 md:border-b-2 border-blue-400;
+  }
+}
 /* .App {
   text-align: center;
 }

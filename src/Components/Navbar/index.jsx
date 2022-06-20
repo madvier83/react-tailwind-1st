@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [navOpen, setNavOpen] = useState(false);
+  const pathName = useLocation().pathname;
   return (
     <>
       <nav className="relative z-10 text-white bg-slate-800">
@@ -15,7 +16,7 @@ const Navbar = () => {
         ></div>
         {/* Navigation */}
         <div className="flex flex-col md:flex-row">
-          <div className="flex justify-between py-4 px-6 shadow">
+          <div className="flex justify-between md:py-2 py-4 px-6 shadow">
             <div className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,22 +70,29 @@ const Navbar = () => {
           <div
             className={`${
               navOpen ? "block" : "hidden"
-            } md:flex md:flex-row justify-between w-full py-4 pr-4`}
+            } md:flex md:flex-row justify-between w-full md:py-2 py-4 px-4 text-slate-300`}
           >
             <div className="flex flex-col md:flex-row">
               <Link
                 to="/"
                 onClick={() => setNavOpen(!navOpen)}
-                className="py-2 px-4"
+                className={`${pathName == "/" && "nav-active"} py-2 px-4`}
               >
                 Home
               </Link>
               <Link
-                to="/flexbox"
+                to="/flex"
                 onClick={() => setNavOpen(!navOpen)}
-                className="py-2 px-4"
+                className={`${pathName == "/flex" && "nav-active"} py-2 px-4`}
               >
-                Flexbox
+                Flex
+              </Link>
+              <Link
+                to="/grid"
+                onClick={() => setNavOpen(!navOpen)}
+                className={`${pathName == "/grid" && "nav-active"} py-2 px-4`}
+              >
+                Grid
               </Link>
               <a
                 href="https://github.com/madvier83/react-tailwind-1st"
@@ -97,13 +105,14 @@ const Navbar = () => {
               </a>
             </div>
             <div className="flex flex-col md:flex-row">
-              <Link
-                to="/"
+              <a
+                href="mailto:madvier83@gmail.com"
+                target="_blank"
                 onClick={() => setNavOpen(!navOpen)}
                 className="py-2 px-4"
               >
                 Contact
-              </Link>
+              </a>
             </div>
           </div>
         </div>
