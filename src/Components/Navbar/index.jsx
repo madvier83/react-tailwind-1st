@@ -12,7 +12,7 @@ const Navbar = (props) => {
           onClick={() => setNavOpen(!navOpen)}
           className={`${
             !navOpen ? "hidden" : "block"
-          } md:hidden absolute -z-10 w-screen h-screen top-0 bg-slate-900 opacity-50 backdrop-blur-xl`}
+          } md:hidden absolute -z-10 w-full h-screen top-0 bg-slate-900 opacity-50`}
         ></div>
         {/* Navigation */}
         <div className="flex flex-col md:flex-row">
@@ -106,7 +106,7 @@ const Navbar = (props) => {
             </div>
             <div className="flex flex-col md:flex-row">
               <a
-                href="mailto:madvier83@gmail.com"
+                href="https://wa.me/+6282376932445"
                 target="_blank"
                 onClick={() => setNavOpen(!navOpen)}
                 className="py-2 px-4"
